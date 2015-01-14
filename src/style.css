@@ -1,0 +1,87 @@
+/* Micro reset */
+*,*:before,*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	color: black;
+	font-size: 16px;
+	font-family: Helvetica, Sans-Serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+	outline: none;
+}
+
+a:visited {
+	color: black;
+}
+
+a.dot {
+	border-bottom: 1px dotted black;
+}
+
+h1 {
+	font-size: 28px;
+  text-align: center;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+h1, h3, p {
+  margin: 0 auto 1em;
+}
+
+.wrapper {
+  min-height: 100%;
+  min-width: 100%;
+  background-color: white;
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
+  padding: 50px;
+}
+
+/* cascade-gallery */
+
+.gallery-wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  background-color: silver;
+}
+
+#title-of-images-list, #close-button-for-images-list {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#title-of-images-list {
+  width: 90%;
+  float: left;
+  text-align: left;
+}
+
+#close-button-for-images-list {
+  width: 10%;
+  float: right;
+  text-align: right;
+}
+

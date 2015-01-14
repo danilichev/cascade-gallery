@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href="src/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div class="wrapper">
+        <h1>IMAGES</h1>
+        <div class="gallery-wrapper">
+            <img id="thmbnl2" src="img/thumbnails/20.png">
+            <img id="thmbnl1" src="img/thumbnails/10.png">
+            <img id="thmbnl0" src="img/thumbnails/00.png">
+        </div>
+	</div>
+    <script src="src/cascade-gallery.js"></script>
+    <script>
+        var gallery2 = gallery({
+            thumbnailId: "thmbnl2",
+            name: "Shades of green",
+            images: [
+                "img/21.png",
+                "img/22.png",
+                "img/23.png" ]
+        });
+        var gallery1 = gallery({
+            thumbnailId: "thmbnl1",
+            name: "Shades of yellow",
+            images: [
+                "img/11.png",
+                "img/12.png",
+                "img/13.png" ]
+        });
+        var gallery0 = gallery({
+            thumbnailId: "thmbnl0",
+            name: "Shades of orange",
+            images: [
+                "img/01.png",
+                "img/02.png",
+                "img/03.png" ]
+        });
+    </script>
+</body>
+</html>
