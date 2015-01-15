@@ -60,12 +60,23 @@ h1, h3, p {
 
 /* cascade-gallery */
 
+div {
+    -webkit-transition: all 25s ease;
+       -moz-transition: all 25s ease;
+            transition: all 25s ease;
+}
+
 .gallery-wrapper {
   max-width: 720px;
   margin: 0 auto;
   position: relative;
   text-align: center;
-  background-color: silver;
+}
+
+#images-list {
+  -moz-transition: opacity .3s, max-height .3s;
+    -ms-transition: opacity .3s, max-height .3s;
+    transition: opacity .3s, max-height .3s;
 }
 
 #title-of-images-list, #close-button-for-images-list {
@@ -83,5 +94,10 @@ h1, h3, p {
   width: 10%;
   float: right;
   text-align: right;
+}
+
+#description-of-images {
+  font-size: 16px;
+  text-align: justify;
 }
 

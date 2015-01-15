@@ -2,7 +2,7 @@ var gallery = function (settings) {
 
   var thumbnailId = settings.thumbnailId,
       name = settings.name,
-      decription = settings.decription,
+      decription = settings.description,
       images = settings.images;
 
   var imagesList = document.createElement("div");
@@ -28,6 +28,12 @@ var gallery = function (settings) {
   header.appendChild(closeButton);
 
   imagesList.appendChild(header);
+
+  var descriptionOfImages = document.createElement("div");
+  descriptionOfImages.id = "description-of-images";
+  descriptionOfImages.innerHTML = decription;
+
+  imagesList.appendChild(descriptionOfImages);
 
   var addImagesToList = function() {
     var i, img;
