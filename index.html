@@ -5,17 +5,17 @@
 	<link href="src/style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-	<div class="gallery-wrapper">
+	<div id="gallery-wrapper">
         <h1>Some colors</h1>
-        <div class="thumbnails-wrapper">
+        <div id="thumbnails-wrapper">
             <a id="thmbnl2" href="http://danilichev.in.ua"><img src="img/thumbnails/20.png"></a>
             <a id="thmbnl1" href="http://danilichev.in.ua"><img src="img/thumbnails/10.png"></a>
             <a id="thmbnl0" href="http://danilichev.in.ua"><img src="img/thumbnails/00.png"></a>
         </div>
 	</div>
-    <script src="src/cascade-gallery.js"></script>
+    <script type="text/javascript" src="src/cascade-gallery.js"></script>
     <script>
-        Gallery.init(
+        var initGallery = gallery.init(
             { thumbnailId: "thmbnl2",
               name: "Shades of green",
               description: "<b>Green</b> is the color of growing grass, leaves and emeralds. On the spectrum of visible light, it is located between blue and yellow. It is evoked by light with a predominant wavelength of roughly 495–570 nm.",
@@ -39,6 +39,14 @@
                   "img/01.png",
                   "img/02.png",
                   "img/03.png" ] });
+
+        if (typeof window.addEventListener != 'undefined') {
+            window.addEventListener('load', initGallery, false);
+        } else if (typeof document.addEventListener != 'undefined') {
+        	document.addEventListener('load', initGallery, false);
+        } else if (typeof window.attachEvent != 'undefined') {
+        	window.attachEvent('onload', initGallery);
+        }
     </script>
 </body>
 </html>

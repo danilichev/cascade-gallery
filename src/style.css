@@ -21,7 +21,7 @@ body {
 
 /* cascade-gallery */
 
-.gallery-wrapper {
+#gallery-wrapper {
   min-height: 100%;
   min-width: 100%;
   background-color: white;
@@ -33,20 +33,20 @@ body {
   padding: 50px;
 }
 
-.gallery-wrapper img {
+#gallery-wrapper img {
   position: static;
   width:auto;
   max-width: 100%;
   height: auto;
 }
 
-.gallery-wrapper h1 {
+#gallery-wrapper h1 {
 	font-size: 28px;
   text-align: center;
 }
 
-.gallery-wrapper .thumbnails-wrapper,
-#images-wrapper .description-wrapper {
+#gallery-wrapper #thumbnails-wrapper,
+#images-wrapper #description-wrapper {
   max-width: 720px;
   margin: 0 auto 0.5em;
   position: relative;
@@ -54,7 +54,7 @@ body {
   background-color: gray;
 }
 
-#images-wrapper .description-wrapper {
+#images-wrapper #description-wrapper {
   background-color: #999999;
 }
 
@@ -68,25 +68,25 @@ body {
   margin-bottom: 0.5em;
 }
 
-#images-wrapper .description-wrapper #name {
+#images-wrapper #description-wrapper #title {
   text-align: left;
   font-size: 20px;
   font-weight: bold;
   background-color: gray;
 }
 
-#images-wrapper .description-wrapper #close-button {
+#images-wrapper #description-wrapper #close-button {
   width: 20px;
   height: 20px;
   margin-left: 0.5em;
   float: right;
   text-align: right;
   cursor: pointer;
-  background-image: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='20px' height='20px' viewBox='0 0 20 20' enable-background='new 0 0 20 20' xml:space='preserve'><path d='M 0 0 l 20 20' style='fill: none; stroke-width: 4; stroke: black;'></path><path d='M 20 0 l -20 20' style='fill: none; stroke-width: 4; stroke: black;'></path></svg>");
+  background-image: url(close.svg);
   background-size: contain;
 }
 
-#images-wrapper .description-wrapper #description {
+#images-wrapper #description-wrapper #description {
   position: static;
   margin: 0.5em 0;
   width: 100%;
