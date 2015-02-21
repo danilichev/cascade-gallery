@@ -8,44 +8,41 @@
 	<div id="gallery-wrapper">
         <h1>Some colors</h1>
         <div id="thumbnails-wrapper">
-            <a id="thmbnl2" href="http://danilichev.in.ua"><img src="img/thumbnails/20.png"></a>
-            <a id="thmbnl1" href="http://danilichev.in.ua"><img src="img/thumbnails/10.png"></a>
-            <a id="thmbnl0" href="http://danilichev.in.ua"><img src="img/thumbnails/00.png"></a>
+            <a id="thmbnl2" href="#"><img src="img/thumbnails/20.png"></a>
+            <a id="thmbnl1" href="#"><img src="img/thumbnails/10.png"></a>
+            <a id="thmbnl0" href="#"><img src="img/thumbnails/00.png"></a>
         </div>
 	</div>
     <script type="text/javascript" src="src/cascade-gallery.js"></script>
     <script>
-        var initGallery = gallery.init(
-            { thumbnailId: "thmbnl2",
-              name: "Shades of green",
-              description: "<b>Green</b> is the color of growing grass, leaves and emeralds. On the spectrum of visible light, it is located between blue and yellow. It is evoked by light with a predominant wavelength of roughly 495–570 nm.",
-              images: [
-                  "img/21.png",
-                  "img/22.png",
-                  "img/23.png" ] },
-            { thumbnailId: "thmbnl1",
-              name: "Shades of yellow",
-              description: "Yellow is the color the human eye sees when it looks at light within the wavelengths of 570 and 590 nanometers, the wavelength of light between green and orange.",
-              images: [
-                  "img/11.png",
-                  "img/12.png",
-                  "img/13.png" ] },
-            { thumbnailId: "thmbnl0",
-              name: "Shades of orange",
-             /*
-              description: "In optics, orange is the colour seen by the eye when looking at light with a wavelength between approximately 585–620 nm. It has a hue of 30° in HSV colour space.",
-             */
-              images: [
-                  "img/01.png",
-                  "img/02.png",
-                  "img/03.png" ] });
-
-        if (typeof window.addEventListener != 'undefined') {
-            window.addEventListener('load', initGallery, false);
-        } else if (typeof document.addEventListener != 'undefined') {
-        	document.addEventListener('load', initGallery, false);
-        } else if (typeof window.attachEvent != 'undefined') {
-        	window.attachEvent('onload', initGallery);
+        window.onload = function() {
+            gallery.init(
+                { thumbnailId: "thmbnl2",
+                 name: "Shades of green",
+                 description: "<b>Green</b> is the color of growing grass, leaves and emeralds. On the spectrum of visible light, it is located between blue and yellow. It is evoked by light with a predominant wavelength of roughly 495–570 nm.",
+                 images: [
+                     "img/21.png",
+                     "img/22.png",
+                     "img/23.png" ] },
+                {
+                 thumbnailId: "thmbnl1",
+                 name: "Shades of yellow",
+                 description: "Yellow is the color the human eye sees when it looks at light within the wavelengths of 570 and 590 nanometers, the wavelength of light between green and orange.",
+                 images: [
+                     "img/11.png",
+                     "img/12.png",
+                     "img/13.png" ] },
+                {
+                 thumbnailId: "thmbnl0",
+                 name: "Shades of orange",
+                /*
+                 description: "In optics, orange is the colour seen by the eye when looking at light with a wavelength between approximately 585–620 nm. It has a hue of 30° in HSV colour space.",
+                */
+                 images: [
+                     "img/01.png",
+                     "img/02.png",
+                     "img/03.png" ] }
+             );
         }
     </script>
 </body>
