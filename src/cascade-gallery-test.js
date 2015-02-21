@@ -78,6 +78,7 @@ var gallery = function() {
   }
 
   var init = function() {
+    if (arguments === null) return;
     var thumbnails = [], i;
     for (i = 0; i < arguments.length; i++) {
       var argument = arguments[i];
@@ -88,7 +89,5 @@ var gallery = function() {
     }
   }
 
-  return {
-    init: init
-  }
-}
+  return { init: init }
+}();
