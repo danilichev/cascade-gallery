@@ -1,23 +1,28 @@
-var gallery = (function() {
+var gallery = function() {
 
-  var galleryWrapperId = "gallery-wrapper",
-      thumbnailsWrapperId = "thumbnails-wrapper",
-      imagesWrapperId = "images-wrapper",
-      descriptionWrapperId = "description-wrapper",
-      titleId = "title",
-      closeButtonId = "close-button",
-      descriptionId = "description";
+  var css = {
+    ids: {
+      galleryWrapper: "gallery-wrapper",
+      thumbnailsWrapper: "thumbnails-wrapper",
+      imagesWrapper: "images-wrapper",
+      descriptionWrapper: "description-wrapper",
+      title: "title",
+      closeButton: "close-button",
+      description: "description"
+    }
+  };
 
-  var galleryWrapper = document.getElementById(galleryWrapperId);
+  var galleryWrapper = document.getElementById(css.ids.galleryWrapper);
 
   var removeImagesWrapperIfExist = function() {
-    var imagesWrapper = document.getElementById(imagesWrapperId);
+    var imagesWrapper = document.getElementById(css.ids.imagesWrapper);
     if (imagesWrapper != null) galleryWrapper.removeChild(imagesWrapper);
   }
 
   var addImagesToWrapper = function(wrapper, imagesList) {
-    var i, image, lineBreak;
-    for (i = 0; i < imagesList.length; i++) {
+    var image, lineBreak,
+        i, length = imagesList.length;
+    for (i = 0; i < length; i++) {
       image = document.createElement("img");
       image.src = imagesList[i];
       wrapper.appendChild(image);
@@ -34,18 +39,18 @@ var gallery = (function() {
   }
 
   var createDescriptionWrapper = function(title, description) {
-    var wrapper = createDivWithId(descriptionWrapperId);
+    var wrapper = createDivWithId(css.ids.descriptionWrapper);
 
-    var closeButton = createDivWithId(closeButtonId);
+    var closeButton = createDivWithId(css.ids.closeButton);
     closeButton.onclick = function() { removeImagesWrapperIfExist(); };
     wrapper.appendChild(closeButton);
 
-    var titleBlock = createDivWithId(titleId);
+    var titleBlock = createDivWithId(css.ids.title);
     titleBlock.innerHTML = title;
     wrapper.appendChild(titleBlock);
 
     if (description != null) {
-      var descriptionBlock = createDivWithId(descriptionId);
+      var descriptionBlock = createDivWithId(css.ids.description);
       descriptionBlock.innerHTML = description;
       wrapper.appendChild(descriptionBlock);
     }
@@ -60,14 +65,14 @@ var gallery = (function() {
 
     removeImagesWrapperIfExist();
 
-    var imagesWrapper = createDivWithId(imagesWrapperId);
+    var imagesWrapper = createDivWithId(css.ids.imagesWrapper);
 
     var descriptionWrapper = createDescriptionWrapper(name, description);
     imagesWrapper.appendChild(descriptionWrapper);
 
     addImagesToWrapper(imagesWrapper, images);
 
-    var thumbnailsWrapper = document.getElementById(thumbnailsWrapperId);
+    var thumbnailsWrapper = document.getElementById(css.ids.thumbnailsWrapper);
     galleryWrapper.insertBefore(imagesWrapper, thumbnailsWrapper);
   }
 
@@ -78,8 +83,9 @@ var gallery = (function() {
   }
 
   var init = function() {
-    var thumbnails = [], i;
-    for (i = 0; i < arguments.length; i++) {
+    var thumbnails = [],
+        i, length = arguments.length;
+    for (i = 0; i < length; i++) {
       var argument = arguments[i];
 
       thumbnails[i] = document.getElementById(argument.thumbnailId);
@@ -88,7 +94,5 @@ var gallery = (function() {
     }
   }
 
-  return {
-    init: init
-  }
-})();
+  return { init: init }
+}();
